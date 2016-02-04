@@ -6,13 +6,13 @@
 <% end %>
 
 
-<div class="row">
+<div class="row" id="product_index_page">
 <% @products.each do |p|  %>
 	<div class="col-lg-3">
 		<%= image_tag p.image.url(:medium) %>
-		<p> <%= p.name %> </p>
-		<p> <%= p.description %> </p>
-		<p> <%= p.rate %> </p>			
+		<h4> <%= p.name %> </h4>
+		<b class="pull-right"> &#8377; <%= p.rate %> </b>		
+		<p> <%= p.description %> </p>			
 	</div>
 <% end %>
 </div>

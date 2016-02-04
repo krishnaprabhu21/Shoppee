@@ -1,4 +1,5 @@
 
+<div class="errors">
 <% if @offer.errors.any? %>
 	<div>
 		Form has <%= pluralize(@offer.errors.count, "error") %>.
@@ -9,6 +10,7 @@
 		<% end %>
 	</ul>
 <% end %>
+</div>
 
 <h1> Add New Offer </h2>
 

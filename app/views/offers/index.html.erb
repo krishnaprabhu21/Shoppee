@@ -3,16 +3,16 @@
 
 <div class="row">
 	<% @offers.each do |o|  %>
-		<div class="col-lg-3">
+		<div class="col-lg-3" id="offers_index_page">
 			<p> Offer Name - <b> <%= o.offername %> </b> </p>
 			<p> Offer belongs to Product - <b> <%= o.product_id %> </b> </p>
 			<p> Offer Start Date - <b> <%= o.offerstartdate %> </b> </b> </p>
 			<p> Offer End Date - <b> <%= o.offerenddate %> </b> </p>
 			<p> Offer Description - <b> <%= o.offerdescription %> </b> </p>		
 			
-			<%= link_to 'Edit', edit_offer_path(o), class: 'btn btn-primary' %>
+			<%= link_to 'Edit', edit_offer_path(o), class: 'btn btn-primary btn-sm' %>
 			<%= link_to 'Delete', o, method: :delete,
-                                  data: { confirm: "You sure?" }, class: 'btn btn-danger' %>
+                                  data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
 		</div>
 	<% end %>
 </div>
