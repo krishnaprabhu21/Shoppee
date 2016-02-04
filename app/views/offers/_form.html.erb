@@ -1,0 +1,38 @@
+<%= form_for @offer, :class => "form-horizontal" ,html: { multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.label :offername, :class => "control-label"  %>
+      <div class="">
+        <%= f.text_field :offername, :class => "form-control", :id => "offername" %>
+      </div>
+    </div>  
+
+    <div class="form-group">
+      <%= f.label :name, :class => "control-label"  %>
+      <div class="">
+	       <%= collection_select(:offer, :product_id, Product.all, :id, :name, {}, { :multiple => false } ) %>
+      </div>
+    </div> 	     
+
+  <div class="form-group">
+    <%= f.label :offerstartdate, :class => "control-label"  %>
+    <div class="">
+      <%= f.date_select  :offerstartdate, :start_year =>2016, required: true, :class => "form-control" %>
+    </div>
+  </div>  
+
+    <div class="form-group">
+      <%= f.label :offerenddate, :class => "control-label"  %>
+      <div class="">
+        <%= f.date_select  :offerenddate, required: true, :class => "form-control" %>
+      </div>
+    </div>      
+
+    <div class="form-group">
+      <%= f.label :offerdescription, :class => "control-label"  %>
+      <div class="">
+        <%= f.text_area :offerdescription, :class => "form-control", :id => "offerdescription" %>
+      </div>
+    </div>     
+
+	<%= f.submit "Create", :class => "btn btn-primary" %>
+<% end %>

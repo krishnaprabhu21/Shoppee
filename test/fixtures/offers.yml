@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offername: MyString
+  offerstartdate: MyString
+  offerenddate: MyString
+  offerdescription: MyString
+
+two:
+  offername: MyString
+  offerstartdate: MyString
+  offerenddate: MyString
+  offerdescription: MyString

@@ -1,0 +1,90 @@
+
+<h2>Welcome Admin :)</h2>
+
+
+
+
+<div class="row">
+	<div class="col-lg-12">
+		<div class="tabbable" id="tabs-524748">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#panel-197218" data-toggle="tab">Products</a>
+				</li>
+				<li>
+					<a href="#panel-221290" data-toggle="tab">Users</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="panel-197218">
+
+				<% if @products.empty? %>
+					<h3>Currently there are no items in the Store :( !</h4>
+				<% end %>
+					<% @products.each do |p|  %>
+						<div class="row">
+							<div class="col-lg-3">
+								<%= image_tag p.image.url(:medium) %>
+							</div>
+							<div class="col-lg-8">
+								<h3> <%= p.name %> </h3>
+								<b class="pull-right"> <%= p.rate %> </b>	
+								<p> - <%= p.description %> </p>
+
+							<%= link_to 'Edit Product', edit_product_path(p), class: 'btn btn-primary btn-sm' %>
+									<%= link_to 'Delete Product', p, method: :delete,
+						                                  data: { confirm: "Product & related Offers will be deleted..You sure?" }, class: 'btn btn-danger btn-sm' %>
+								</div>
+							</div>
+						<% end %>
+					</div>
+
+					<div class="tab-pane" id="panel-221290">
+
+						<% if @users.empty? %>
+							<h3>Currently no users have Registered to the Store :( !</h4>
+						<% else %>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>
+										Username
+									</th>
+									<th>
+										Email
+									</th>
+									<th>
+										
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @users.each do |u|  %>
+								<tr>
+									<td>
+										<%= u.username %> 
+									</td>
+									<td>
+										<%= u.email %> 
+									</td>
+									<td>
+											<%= link_to 'Delete User', u, method: :delete,
+							                                  data: { confirm: "You sure?" }, class: 'btn btn-danger' %>	
+									</td>
+								</tr>
+								<% end %>
+							</tbody>
+						</table>
+						<% end %>
+					</div>
+				</div>
+			</div>		
+	</div>
+</div>
+
+
+
+
+
+
+

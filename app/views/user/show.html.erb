@@ -1,0 +1,10 @@
+
+<div class="row">
+	<% @users.each do |u|  %>
+		<%= u.username %> 
+		<%= u.email %> 
+		<%= link_to 'Edit User Details', edit_user_registration_path(u), class: 'btn btn-primary' %>
+		<%= link_to 'Delete User', u, method: :delete,
+                                  data: { confirm: "You sure?" }, class: 'btn btn-primary' %>	
+	<% end %>
+</div>

@@ -1,0 +1,16 @@
+
+<% if @product.errors.any? %>
+	<div>
+		Form has <%= pluralize(@product.errors.count, "error") %>.
+	</div>
+	<ul>
+		<% @product.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h1> Add New Product </h2>
+
+<%= render 'form' %>
+
